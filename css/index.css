@@ -35,3 +35,11 @@ body{
     width: 8em;
 
 }
+
+.navbar .menu{
+
+    /* background-color: red; */
+    width: 70em;
+    height: 6em;
+
+}
