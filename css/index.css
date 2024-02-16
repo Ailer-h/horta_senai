@@ -1,5 +1,4 @@
 /* Classes comuns */
-
 @import url('https://fonts.googleapis.com/css?family=Varela Round&display=swap');
 
 *{
@@ -15,7 +14,7 @@
 body{
 
     background-color: #FEFAE0;
-
+    scroll-behavior: smooth;
 }
 
 .navbar{
@@ -25,15 +24,11 @@ body{
     height: 6em;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-
-}
-
-.navbar img{
-
-    height: 7em;
-    width: 7em;
+    
+    width: 100%;
+    position: fixed;
 
 }
 
@@ -76,6 +71,7 @@ body{
 
 .banner{
 
+    padding-top: 6em;
     height: 20em;
 
     background-image: url(../images/banner.png);
@@ -115,4 +111,103 @@ body{
     color: #FAEF5D;
     font-size: 2em;
 
+}
+/* Fim das classes comuns */
+
+/* Classes de corpo */
+.center{
+
+    min-height: 30em;
+    max-height: max-content;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form{
+
+    background-color: #A9B388;
+    width: 40em;
+    height: 30em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 4em;
+
+}
+
+.form h1{
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 2em;
+
+}
+
+.form form{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.form form label{
+
+    font-weight: bold;
+    margin-bottom: .5em;
+
+}
+
+.form form input[type="text"]{
+
+    margin-bottom: 1em;
+    height: 1.5em;
+    width: 20em;
+    border: none;
+    border-radius: 1em;
+
+    background-color: #FEFAE0;
+
+}
+
+.form form select{
+
+    width: 20em;
+    height: 1.5em;
+    border: none;
+    border-radius: 1em;
+
+    background-color: #FEFAE0;
+
+}
+
+.form form input[type="submit"]{
+
+    margin-top: 2em;
+    width: 15em;
+    height: 2em;
+    color: white;
+
+    background-color: #B99470;
+    border: none;
+    border-radius: 1em;
+
+    transition: 200ms;
+
+}
+
+.form form input[type="submit"]:hover{
+    
+    background-color: #866a4f;
+    transform: scale(1.06);
+    transition: 200ms;
+    
 }
