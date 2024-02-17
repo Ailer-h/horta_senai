@@ -1,3 +1,38 @@
+<?php
+
+    session_start();
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadastrar'])){
+        addInformacao($_POST['nome'],$_POST['tipo'],$_POST['qtd'],$_POST['tempo'],$_POST['bloco']);
+    }
+
+    //Declaração das funções que serão utilizadas
+    function addInformacao($nome, $tipo, $qtd, $tempo_colheita, $bloco){
+
+        //Cria uma estrutura de dados para uma nova planta (~ JSON)
+        $planta = [
+            'id' => uniqid(), //Cria um id unico para cada elemento
+            'nome' => $nome,
+            'tipo' => $tipo,
+            'qtd' => $qtd,
+            'tempo_colheita' => $tempo_colheita,
+            'bloco' => $bloco
+        ];
+
+        //Adiciona a informação ao array (Banco de dados)
+        $_SESSION['plantas'][] = $planta;
+
+    }
+
+    for ($i=0; $i < 100; $i++) { 
+        addInformacao('nome','tipo','qtd','tempo',1);
+        addInformacao('nome','tipo','qtd','tempo',2);
+        addInformacao('nome','tipo','qtd','tempo',3);
+        addInformacao('nome','tipo','qtd','tempo',4);
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +46,7 @@
 
     <div class="navbar">
         <div class="menu">
-            <button class="option" onclick="goToForm('formSection')">Adicionar planta</button>
+            <button class="option" onclick="goToSection('formSection')">Adicionar planta</button>
             <a href="html/database.php"><button class="option">Visualizar database</button></a>
         </div>
     </div>
@@ -51,7 +86,7 @@
                         <option value="4">Bloco 4</option>
                     </select>
 
-                    <input type="submit" value="Cadastrar">
+                    <input type="submit" value="Cadastrar" name="cadastrar">
                 </form>
             </div>
         </section>

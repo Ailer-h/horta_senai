@@ -1,3 +1,43 @@
+<?php
+
+    session_start();
+
+    //Funções necessárias
+    function delInformacao($id){
+
+        if(!empty($_SESSION['plantas'])){
+            
+            foreach($_SESSION['plantas'] as $ix => $planta){
+                if($planta['id'] === $id){
+                    unset($_SESSION['plantas'][$ix]);
+                    break;
+                }
+            }
+
+        }
+
+    }
+
+    function table($bloco){
+
+        if(!empty($_SESSION['plantas'])){
+            foreach($_SESSION['plantas'] as $planta){
+                if($planta['bloco'] == $bloco){
+                    echo '<p>'.$planta['nome'].'</p>';
+                    echo '<p>'.$planta['tipo'].'</p>';
+                    echo '<p>'.$planta['qtd'].'</p>';
+                    echo '<p>'.$planta['tempo_colheita'].'</p>';
+                    echo '<form method="post"><input type="hidden" name="id" value="'.$planta['id'].'"><input type="submit" value="Deletar" name="deletar"</form>';
+                    echo '<form method="post"><input type="hidden" name="id" value="'.$planta['id'].'"><input type="submit" value="Editar" name="editar"</form>';
+                }
+            }
+        }
+
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,23 +64,51 @@
     <div class="center">
         <div class="database">
             <section id="bloco1">
-                <div class="bloco"></div>
+                <div class="bloco">
+                    <h1>Bloco 1</h1>
+                    <div class="tabela">
+                        <?php
+                            table(1);
+                        ?>
+                    </div>
+                </div>
             </section>
 
             <section id="bloco2">
-                <div class="bloco"></div>
+                <div class="bloco">
+                    <h1>Bloco 2</h1>
+                    <div class="tabela">
+                        <?php
+                            table(2);
+                        ?>
+                    </div>
+                </div>
             </section>
 
             <section id="bloco3">
-                <div class="bloco"></div>
+                <div class="bloco">
+                    <h1>Bloco 3</h1>
+                    <div class="tabela">
+                        <?php
+                            table(3);
+                        ?>
+                    </div>
+                </div>
             </section>
 
             <section id="bloco4">
-                <div class="bloco"></div>
+                <div class="bloco">
+                    <h1>Bloco 4</h1>
+                    <div class="tabela">
+                        <?php
+                            table(4);
+                        ?>
+                    </div>
+                </div>
             </section>
+
         </div>
     </div>
-
 
 </body>
 <script src="../js/functions.js"></script>

@@ -145,5 +145,41 @@ body{
     background-color: #A9B388;
     
     border-radius: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.database .bloco h1{
+
+    font-size: 2em;
+    margin-top: .5em;
+
+}
+
+.database .bloco .tabela{
+    
+    /* background-color: red; */
+
+    width: 47em;
+    align-items: center;
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: 16% 16% 16% 16% 16% 16%;
+
+    overflow-y: scroll;
+
+}
+
+.database .bloco .tabela::-webkit-scrollbar{
+    display: none;
+}
+
+.database .bloco .tabela input[type="submit"]{
+
+    width: 5em;
+    height: 2em;
 
 }
