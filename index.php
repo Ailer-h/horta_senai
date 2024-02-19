@@ -24,13 +24,6 @@
 
     }
 
-    for ($i=0; $i < 100; $i++) { 
-        addInformacao('nome','tipo','qtd','tempo',1);
-        addInformacao('nome','tipo','qtd','tempo',2);
-        addInformacao('nome','tipo','qtd','tempo',3);
-        addInformacao('nome','tipo','qtd','tempo',4);
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +71,7 @@
                     <input type="text" id="tempo" name="tempo" required>
 
                     <label for="bloco">Bloco:</label>
-                    <select name="bloco" id="bloco" required>
+                    <select name="bloco" id="bloco" name="bloco" required>
                         <option value="" disabled selected hidden>Selecione um bloco...</option>
                         <option value="1">Bloco 1</option>
                         <option value="2">Bloco 2</option>
