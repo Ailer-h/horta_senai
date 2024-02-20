@@ -6,7 +6,6 @@
     function delInformacao($id){
 
         if(!empty($_SESSION['plantas'])){
-            
             foreach($_SESSION['plantas'] as $ix => $planta){
                 if($planta['id'] === $id){
                     unset($_SESSION['plantas'][$ix]);
@@ -18,6 +17,32 @@
 
     }
 
+    function addInformacao($nome, $tipo, $qtd, $tempo_colheita, $bloco){
+
+        //Cria uma estrutura de dados para uma nova planta (~ JSON)
+        $planta = [
+            'id' => uniqid(), //Cria um id unico para cada elemento
+            'nome' => $nome,
+            'tipo' => $tipo,
+            'qtd' => $qtd,
+            'tempo_colheita' => $tempo_colheita,
+            'bloco' => $bloco
+        ];
+
+        //Adiciona a informação ao array (Banco de dados)
+        $_SESSION['plantas'][] = $planta;
+
+    }
+
+    function clearDatabase(){
+        if(!empty($_SESSION['plantas'])){
+            foreach($_SESSION['plantas'] as $ix => $planta){
+                unset($_SESSION['plantas'][$ix]);
+            }
+
+        }
+    }
+
     function table($bloco){
 
         if(!empty($_SESSION['plantas'])){
@@ -27,14 +52,13 @@
                     echo '<p>'.$planta['tipo'].'</p>';
                     echo '<p>'.$planta['qtd'].'</p>';
                     echo '<p>'.$planta['tempo_colheita'].'</p>';
-                    echo '<form method="post"><input type="hidden" name="id" value="'.$planta['id'].'"><input type="submit" value="Deletar" name="deletar"</form>';
-                    echo '<form method="post"><input type="hidden" name="id" value="'.$planta['id'].'"><input type="submit" value="Editar" name="editar"</form>';
+                    echo '<form method="post"><input type="hidden" name="id" value="'.$planta['id'].'"><input type="submit" value="Deletar" name="deletar" class="del"></form>';
+                    echo '<form method="post" action="edit.php"><input type="hidden" name="id" value="'.$planta['id'].'"><input type="submit" value="Editar" name="editar" class="edit"></form>';
                 }
             }
         }
 
     }
-
 
 ?>
 
@@ -113,3 +137,18 @@
 </body>
 <script src="../js/functions.js"></script>
 </html>
+
+<?php
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deletar'])){
+        $id = $_POST['id'];
+        delInformacao($id);
+        
+        header('Location: database.php');
+    }
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadastrar'])){
+        addInformacao($_POST['nome'],$_POST['tipo'],$_POST['qtd'],$_POST['tempo'],$_POST['bloco']);
+    }
+
+?>

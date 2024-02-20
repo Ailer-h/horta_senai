@@ -155,6 +155,7 @@ body{
 
     font-size: 2em;
     margin-top: .5em;
+    margin-bottom: .5em;
 
 }
 
@@ -167,7 +168,9 @@ body{
     justify-content: center;
 
     display: grid;
-    grid-template-columns: 16% 16% 16% 16% 16% 16%;
+    grid-template-columns: 20% 20% 20% 20% 10% 10%;
+
+    gap: .5em 0em;
 
     overflow-y: scroll;
 
@@ -181,5 +184,44 @@ body{
 
     width: 5em;
     height: 2em;
+
+    border-radius: 1em;
+    border: none;
+
+    color: white;
+
+}
+
+.database .bloco .tabela .del{
+
+    background-color: #D04848;
+
+    transition: 200ms;
+
+}
+
+.database .bloco .tabela .del:hover{
+
+    background-color: #9c3535;
+    transform: scale(1.06);
+
+    transition: 200ms;
+
+}
+
+.database .bloco .tabela .edit{
+
+    background-color: #6895D2;
+
+    transition: 200ms;
+
+}
+
+.database .bloco .tabela .edit:hover{
+
+    background-color: #4b6a95;
+    transform: scale(1.06);
+
+    transition: 200ms;
 
 }

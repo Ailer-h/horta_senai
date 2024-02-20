@@ -62,7 +62,7 @@
                     <input type="text" id="nome" name="nome" required>
 
                     <label for="tipo">Tipo de Hortaliça:</label>
-                    <input type="text" id="tipo" nome="tipo" required>
+                    <input type="text" id="tipo" name="tipo" required>
 
                     <label for="qtd">Qtd. Plantada:</label>
                     <input type="text" id="qtd" name="qtd" required>
