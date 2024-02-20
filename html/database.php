@@ -89,7 +89,7 @@
         <div class="database">
             <section id="bloco1">
                 <div class="bloco">
-                    <h1>Bloco 1</h1>
+                    <h1>Canteiro 1</h1>
                     <div class="tabela">
                         <?php
                             table(1);
@@ -100,7 +100,7 @@
 
             <section id="bloco2">
                 <div class="bloco">
-                    <h1>Bloco 2</h1>
+                    <h1>Canteiro 2</h1>
                     <div class="tabela">
                         <?php
                             table(2);
@@ -111,7 +111,7 @@
 
             <section id="bloco3">
                 <div class="bloco">
-                    <h1>Bloco 3</h1>
+                    <h1>Canteiro 3</h1>
                     <div class="tabela">
                         <?php
                             table(3);
@@ -122,7 +122,7 @@
 
             <section id="bloco4">
                 <div class="bloco">
-                    <h1>Bloco 4</h1>
+                    <h1>Canteiro 4</h1>
                     <div class="tabela">
                         <?php
                             table(4);

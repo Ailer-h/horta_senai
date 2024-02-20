@@ -55,7 +55,7 @@
     
         <section id="formSection">
             <div class="form">
-                <h1>Cadatrar Hortaliça</h1>
+                <h1>Cadastrar Hortaliça</h1>
                 <form action="index.php" method="post">
 
                     <label for="nome">Nome:</label>
@@ -70,13 +70,13 @@
                     <label for="tempo"->Tempo pra colheita:</label>
                     <input type="text" id="tempo" name="tempo" required>
 
-                    <label for="bloco">Bloco:</label>
+                    <label for="bloco">Canteiro:</label>
                     <select name="bloco" id="bloco" name="bloco" required>
-                        <option value="" disabled selected hidden>Selecione um bloco...</option>
-                        <option value="1">Bloco 1</option>
-                        <option value="2">Bloco 2</option>
-                        <option value="3">Bloco 3</option>
-                        <option value="4">Bloco 4</option>
+                        <option value="" disabled selected hidden>Selecione um canteiro...</option>
+                        <option value="1">Canteiro 1</option>
+                        <option value="2">Canteiro 2</option>
+                        <option value="3">Canteiro 3</option>
+                        <option value="4">Canteiro 4</option>
                     </select>
 
                     <input type="submit" value="Cadastrar" name="cadastrar">
