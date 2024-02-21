@@ -59,13 +59,13 @@
                 <form action="index.php" method="post">
 
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
+                    <input type="text" id="nome" name="nome" onkeyup="letters_js(this.value,this)" required>
 
                     <label for="tipo">Tipo de Hortaliça:</label>
-                    <input type="text" id="tipo" name="tipo" required>
+                    <input type="text" id="tipo" name="tipo" onkeyup="letters_js(this.value,this)" required>
 
                     <label for="qtd">Qtd. Plantada:</label>
-                    <input type="text" id="qtd" name="qtd" onkeyup="nums_js(this.value, this)" required>
+                    <input type="number" min="1" id="qtd" name="qtd" required>
 
                     <label for="tempo"->Tempo pra colheita:</label>
                     <input type="text" id="tempo" name="tempo" required>

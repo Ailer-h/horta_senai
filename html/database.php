@@ -147,8 +147,4 @@
         header('Location: database.php');
     }
 
-    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadastrar'])){
-        addInformacao($_POST['nome'],$_POST['tipo'],$_POST['qtd'],$_POST['tempo'],$_POST['bloco']);
-    }
-
 ?>

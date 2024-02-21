@@ -42,8 +42,7 @@
         }
     }
 
-    function editInformation($id, $dataStructure)
-    {
+    function editInformation($id, $dataStructure){
 
         if (!empty($_SESSION['plantas'])) {
             foreach ($_SESSION['plantas'] as $ix => $planta) {
@@ -53,6 +52,45 @@
                 }
             }
         }
+    }
+
+    function printCanteiro($canteiro){
+
+        echo '<label for="bloco">Canteiro:</label>
+              <select name="bloco" id="bloco" name="bloco" required>';
+
+        if($canteiro == 1){
+
+            echo '<option value="1" selected>Canteiro 1</option>
+                  <option value="2">Canteiro 2</option>
+                  <option value="3">Canteiro 3</option>
+                  <option value="4">Canteiro 4</option>';
+
+        }else if($canteiro == 2){
+
+            echo '<option value="1">Canteiro 1</option>
+                  <option value="2" selected>Canteiro 2</option>
+                  <option value="3">Canteiro 3</option>
+                  <option value="4">Canteiro 4</option>';
+
+        }else if($canteiro == 3){
+
+            echo '<option value="1">Canteiro 1</option>
+                  <option value="2">Canteiro 2</option>
+                  <option value="3" selected>Canteiro 3</option>
+                  <option value="4">Canteiro 4</option>';
+
+        }else{
+
+            echo '<option value="1">Canteiro 1</option>
+                  <option value="2">Canteiro 2</option>
+                  <option value="3">Canteiro 3</option>
+                  <option value="4" selected>Canteiro 4</option>';
+
+        }
+
+        echo '</select>';
+
     }
 
 ?>
@@ -81,28 +119,20 @@
                     echo '
                         <input  type="hidden" name="id" value='.$_POST['id'].'>
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" value=' . $data["nome"] . ' required>
+                        <input type="text" id="nome" name="nome" value=' . $data["nome"] . ' onkeyup="letters_js(this.value,this)" required>
 
                         <label for="tipo">Tipo de Hortaliça:</label>
-                        <input type="text" id="tipo" name="tipo" value=' . $data["tipo"] . ' required>
+                        <input type="text" id="tipo" name="tipo" value=' . $data["tipo"] . ' onkeyup="letters_js(this.value,this)" required>
 
                         <label for="qtd">Qtd. Plantada:</label>
-                        <input type="text" id="qtd" name="qtd" value=' . $data["qtd"] . ' onkeyup="nums_js(this.value,this)"required>
+                        <input type="number" min="1" id="qtd" name="qtd" value=' . $data["qtd"] . ' required>
 
                         <label for="tempo"->Tempo pra colheita:</label>
-                        <input type="text" id="tempo" name="tempo" value=' . $data["tempo_colheita"] . ' required>
+                        <input type="text" id="tempo" name="tempo" value=' . $data["tempo_colheita"] . ' required>';
 
-                        <label for="bloco">Canteiro:</label>
-                        <select name="bloco" id="bloco" name="bloco" required>
-                            <option value="" disabled selected hidden>Selecione um bloco...</option>
-                            <option value="1">Canteiro 1</option>
-                            <option value="2">Canteiro 2</option>
-                            <option value="3">Canteiro 3</option>
-                            <option value="4">Canteiro 4</option>
-                        </select>
+                    printCanteiro($data['bloco']);
 
-                        <input type="submit" value="Confirmar" name="confirmar">
-                    ';
+                    echo '<input type="submit" value="Confirmar" name="confirmar">';
 
                     ?>
 

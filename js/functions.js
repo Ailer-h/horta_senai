@@ -6,11 +6,11 @@ function goToSection(section){
     });
 }
 
-//Mascara para somente numeros
-function nums_js(valor, input){
+//Mascara para somente letras
+function letters_js(valor, input){
 
     valor = valor.toString();
-    valor = valor.replace(/\D/g,"");
+    valor = valor.replace(/\d/g,"");
 
     document.getElementById(input.id).value = valor;
 
