@@ -1,13 +1,11 @@
-<!-- AILER, VC TEM Q FAZER A FUNÇÃO EDITAR -->
-<!-- VC VAI MANDAR UMA ESTRUTURA PRA OUTRA PG E USAR O ADD LÁ >>>> Vou bosta -->
-<!-- NÃO ESQUECE -->
-
 <?php
 
     session_start();
 
+    //Checa se recebeu a informação de confirmar edição via POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmar'])) {
 
+        //Cria uma estrutura de dados com os valores enviados da edição
         $dataStr = [
 
             'id' => $_POST['id'],
@@ -19,6 +17,7 @@
 
         ];
 
+        //Chama a função de edição e joga para a página database (header)
         editInformation($_POST['id'], $dataStr);
         header('Location: database.php');
         exit;
@@ -88,7 +87,7 @@
                         <input type="text" id="tipo" name="tipo" value=' . $data["tipo"] . ' required>
 
                         <label for="qtd">Qtd. Plantada:</label>
-                        <input type="text" id="qtd" name="qtd" value=' . $data["qtd"] . ' required>
+                        <input type="text" id="qtd" name="qtd" value=' . $data["qtd"] . ' onkeyup="nums_js(this.value,this)"required>
 
                         <label for="tempo"->Tempo pra colheita:</label>
                         <input type="text" id="tempo" name="tempo" value=' . $data["tempo_colheita"] . ' required>
@@ -113,4 +112,5 @@
     </div>
 
 </body>
+<script src="../js/functions.js"></script>
 </html>

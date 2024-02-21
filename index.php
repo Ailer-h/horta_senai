@@ -19,7 +19,7 @@
             'bloco' => $bloco
         ];
 
-        //Adiciona a informação ao array (Banco de dados)
+        //Adiciona a informação ao array ("Banco de dados")
         $_SESSION['plantas'][] = $planta;
 
     }
@@ -65,7 +65,7 @@
                     <input type="text" id="tipo" name="tipo" required>
 
                     <label for="qtd">Qtd. Plantada:</label>
-                    <input type="text" id="qtd" name="qtd" required>
+                    <input type="text" id="qtd" name="qtd" onkeyup="nums_js(this.value, this)" required>
 
                     <label for="tempo"->Tempo pra colheita:</label>
                     <input type="text" id="tempo" name="tempo" required>
