@@ -67,8 +67,8 @@
                     <label for="qtd">Qtd. Plantada:</label>
                     <input type="number" min="1" step="1" id="qtd" name="qtd" onkeydown="int_js()" required>
 
-                    <label for="tempo"->Tempo pra colheita:</label>
-                    <input type="text" id="tempo" name="tempo" required>
+                    <label for="tempo"->Tempo pra colheita (Em meses):</label>
+                    <input type="number" min="1" step="1" id="tempo" name="tempo" onkeydown="int_js()" required>
 
                     <label for="bloco">Canteiro:</label>
                     <select name="bloco" id="bloco" name="bloco" required>

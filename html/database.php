@@ -51,6 +51,13 @@
 
     function table($bloco){
 
+        echo '<p><b>Nome:</b></p>';
+        echo '<p><b>Tipo:</b></p>';
+        echo '<p><b>Qtd:</b></p>';
+        echo '<p><b>Tempo:</b></p>';
+        echo '<p></p>';
+        echo '<p></p>';
+
         if(!empty($_SESSION['plantas'])){
             foreach($_SESSION['plantas'] as $planta){
                 if($planta['bloco'] == $bloco){

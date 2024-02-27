@@ -124,8 +124,8 @@
                         <label for="qtd">Qtd. Plantada:</label>
                         <input type="number" min="1" step="1" id="qtd" name="qtd" onkeydown="int_js()" value='. $data['qtd'] .' required>
 
-                        <label for="tempo"->Tempo pra colheita:</label>
-                        <input type="text" id="tempo" name="tempo" value=' . $data["tempo_colheita"] . ' required>';
+                        <label for="tempo"->Tempo pra colheita (Em messes):</label>
+                        <input type="number" min="1" step="1" id="tempo" name="tempo" onkeydown="int_js()" value=' . $data["tempo_colheita"] . ' required>';
                         
                         printCanteiro($data['bloco']);
 
