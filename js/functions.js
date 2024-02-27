@@ -15,3 +15,13 @@ function letters_js(valor, input){
     document.getElementById(input.id).value = valor;
 
 }
+
+//Limita a somente integers
+function int_js(){
+
+    if(event.key === "." || event.key === ","){
+        event.preventDefault();
+        event.target.value = event.target.value.replace(/[^0-9]*/g,'');
+    }
+
+}

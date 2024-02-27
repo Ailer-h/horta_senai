@@ -47,7 +47,7 @@ body{
 .navbar .option{
 
     height: 3em;
-    width: 13em;
+    width: 6.5em;
 
     border-radius: 1em;
     border: none;
@@ -58,6 +58,31 @@ body{
 
     transition: 200ms;
     
+}
+
+.navbar .limpar{
+
+    height: 3em;
+    width: 6.5em;
+
+    border-radius: 1em;
+    border: none;
+    font-size: 1.2em;
+
+    background-color: #D04848;
+    color: white;
+
+    transition: 200ms;
+
+}
+
+.navbar .limpar:hover{
+
+    background-color: #9c3535;
+    transform: scale(1.06);
+
+    transition: 200ms;
+
 }
 
 .navbar .option:hover{
