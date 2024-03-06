@@ -1,9 +1,10 @@
-Palheta de cores:
+# Sobre o projeto.
+O projeto é um site fictício para o gerenciamento das verduras plantadas numa horta. A confecção desse site foi solicitada num exercício de PHP no SENAI a fim de estudar o comando $_SESSION em PHP.
 
-primary = #5F6F52
-secondary = #A9B388
-accent = #FAEF5D
-neutral 1 = #FEFAE0
-neutral 2 = #B99470
+## Como usar?
+O site possui uma pagina de cadastro na qual todos os valores podem ser enviados para a *database* fictícia. Uma vez fechado o servidor, todos os dados são deletados.
 
-link = https://colorhunt.co/palette/5f6f52a9b388fefae0b99470
+## Tecnologias utilizadas.
+- HTML e CSS;
+- JavaScript;
+- PHP.
