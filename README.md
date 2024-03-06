@@ -8,3 +8,8 @@ O site possui uma pagina de cadastro na qual todos os valores podem ser enviados
 - HTML e CSS;
 - JavaScript;
 - PHP.
+
+## Programas utilizados.
+- Xampp/Wamp - Hosting;
+- Git - Cotrole de Versão;
+- VSCode - Edição de código.
