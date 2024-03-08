@@ -11,5 +11,5 @@ O site possui uma pagina de cadastro na qual todos os valores podem ser enviados
 
 ## Programas utilizados.
 - Xampp/Wamp - Hosting;
-- Git - Cotrole de Versão;
+- Git - Controle de versão;
 - VSCode - Edição de código.
